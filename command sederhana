@@ -1,0 +1,30 @@
+cara masuk lewat command prompt:
+  -tanpa password:
+    >mysql -uroot
+  -pakai password:
+    >mysql -uroot -p(password)
+  -host ip adress:
+    >mysql -h (ip Address) -u root -p(password)
+melihat waktu & tanggal:
+  >SELECT NOW();
+melihat user dan versi:
+  >SELECT USER(), VERSION();
+membuat database:
+  >CREATE DATABASE (nama_database);
+atau bisa menggunakan:
+  >CREATE SCHEMA (nama_database);
+jika error:
+  >CREATE SCHEMA IF NOT EXISTS (nama_database);
+melihat warning:
+  >SHOW WARNINGS;
+melihat database:
+  >SHOW DATABASES;
+menghapus database:
+  >DROP DATABASE (nama_database);
+bisa juga:
+  >DROP SCHEMA (nama_database);
+atau jika error:
+  >DROP DATABASE IF EXISTS (nama_database);
+memilih database:
+  >USE (nama_database);
+
