@@ -5,10 +5,10 @@ cara masuk lewat command prompt:
     >mysql -uroot -p(password)
   -host ip adress:
     >mysql -h (ip Address) -u root -p(password)
-melihat waktu & tanggal:
-  >SELECT NOW();
-melihat user dan versi:
-  >SELECT USER(), VERSION();
+
+melihat waktu, user dan versi:
+  >SELECT NOW(), USER(), VERSION();
+
 membuat database:
   >CREATE DATABASE (nama_database);
 atau bisa menggunakan:
@@ -17,14 +17,75 @@ jika error:
   >CREATE SCHEMA IF NOT EXISTS (nama_database);
 melihat warning:
   >SHOW WARNINGS;
+
 melihat database:
   >SHOW DATABASES;
+
 menghapus database:
   >DROP DATABASE (nama_database);
 bisa juga:
   >DROP SCHEMA (nama_database);
 atau jika error:
   >DROP DATABASE IF EXISTS (nama_database);
+
 memilih database:
   >USE (nama_database);
 
+membuat tabel:
+  >CREATE TABLE IF NOT EXISTS nama_tabel (nama_kolom tipe_data, nama_kolom tipe_data, ...seterusnya,);
+
+tipe data:
+- INT = angka
+- VARCHAR(100) = teks maksimal 100 karakter
+- DATE = tanggal (dimulai dari tahun, bulan, tanggal)
+dan masih banyak lagi
+
+melihat daftar tabel
+  >SHOW TABLES;
+
+melihat struktur tabel:
+  >DESC (nama_tabel);
+bisa juga:
+  >DESCRIBE (nama_tabel);
+
+menghapus tabel:
+  >DROP TABLE (nama_tabel);
+jika error:
+  >DROP TABLE IF EXISTS (nama_tabel);
+
+menambahkan data ke tabel:
+  >INSERT INTO (nama_tabel) VALUES (nilai1, nilai2, ...), (nilai1, nilai2, ...), ...dst);
+  nb:untuk teks dan tanggal ditulis dengan kutip (' / ")
+
+menambah sebagian data:
+  >INSERT INTO nama_tabel (kolom1, kolom3) VALUES (nilai1, nilai3);
+
+melihat isi tabel:
+  >SELECT * FROM nama_tabel;
+  nb:* untuk menampilkan seluruhnya
+
+mengubah data:
+  >UPDATE (nama_tabel) SET (nama_kolom = data_baru) WHERE (kondisi);
+
+menghapus data tabel:
+  >DELETE FROM (nama_tabel) WHERE (kondisi);
+
+data yang ingin ditampilkan:
+  >SELECT (kolom1, kolom2) FROM (nama_table) WHERE (kondisi);
+  nb:kondisi itu seluruh data akan ditampilkan
+
+menampilkan kolom dari tabel:
+  >SELECT (nama_kolom) FROM (nama_tabel);
+
+membatasi yang ingin ditampilkan:
+  >SELECT * FROM (nama_tabel) WHERE kolom=nilai OR kolom=nilai;
+
+menampilkan secara urut:
+  >SELECT * FROM (nama_tabel) ORDER BY (kolom);
+  jika dari yang terbesar ke kecil:
+  >SELECT * FROM (nama_tabel) ORDER BY (kolom) DESC;
+
+membatasi jumlah baris:
+  >SELECT * FROM (nama_tabel) ORDER BY (kolom) LIMIT (jumlah_baris);
+
+- DATABASE, CHARACTER SET DAN COLLATION
