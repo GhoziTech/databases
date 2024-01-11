@@ -89,3 +89,16 @@ membatasi jumlah baris:
   >SELECT * FROM (nama_tabel) ORDER BY (kolom) LIMIT (jumlah_baris);
 
 - DATABASE, CHARACTER SET DAN COLLATION
+melihat charset yang tersedia:
+  >SHOW CHARACTER SET;
+melihat Collation:
+  >SHOW COLLATION;
+
+FORMAT DASAR PEMBUATAN DATABASE:
+  >CREATE DATABASE (nama_database) CHARSET (charset) COLLATE (collation);
+
+melihat charset dan collation dari database:
+  >SHOW CREATE DATABASE (nama_database) \G
+
+mengubah charset dan collation:
+  >ALTER DATABASE (nama_database) CHARACTER SET (charset) COLLATE (collation);
